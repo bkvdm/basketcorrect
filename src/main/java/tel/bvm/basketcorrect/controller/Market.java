@@ -19,7 +19,8 @@ public class Market {
     }
 
     @GetMapping("/add")
-    public void basket (@RequestParam(value = "", required = false) Integer productIdentifier, @RequestParam(value = "", required = false) Integer quantity) {
+    public void basket (@RequestParam(value = "id", required = false) Integer productIdentifier, @RequestParam(value = "count", required = false) Integer quantity) {
+        marketService.add(productIdentifier, quantity);
     }
 
     @GetMapping("/get")
